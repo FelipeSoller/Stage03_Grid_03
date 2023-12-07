@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --color-base-white: #ffffff;
+  --color-base-blue-400: #387E96;
+  --color-base-blue-900: #065E7C;
+  --color-base-black-700: #121214;
+  --color-base-black-900: #202024;
+}
+
+html, body, input {
+  font-family: 'Mulish', sans-serif;
+}
+
+body {
+  font-size: 1.6rem;
+  background: var(--color-base-white);
+  color: var(--color-base-black-700);
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 2.6rem;
+  font-weight: 700;
+  background-color: var(--color-base-blue-900);
+  padding: 1.2rem 2.8rem;
+}
+
+header form {
+  flex: 1;
+}
+
+.input-wrapper label {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 1.4rem;
+  color: var(--color-base-white);
+  background-color: var(--color-base-blue-400);
+  border: 0;
+  border-radius: .4rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.input-wrapper input::placeholder {
+  color:  var(--color-base-white);
+}
+
+.avatar {
+  width: 4.2rem;
+  height: 4.2rem;
+  object-fit: cover;
+
+  border-radius: 50%;
+}
+
+.container {
+  margin: 3rem 2.6rem;
+  width: min(112rem, 100%);
+  margin: 0 auto;
+  width: 38rem;
+}
+
+#banner-image {
+  width: 100%;
+  margin-bottom: 3.2rem;
+}
+
+.buttons-wrapper {
+  padding: .8rem 0 3rem 0;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.gallery h1 {
+  padding: 3.2rem 0;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.grid-container .item {
+  display: flex;
+  flex-direction: row;
+  gap: 1.6rem;
+  align-items: center;
+}
+
+.grid-container .item img {
+  width: 15rem;
+  height: 8rem;
+  border-radius: .5rem;
+  object-fit: cover;
+  aspect-ratio: 16/4;
+}
+
+.grid-container .item h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 160%;
+}
+
+.grid-container .item p {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 160%;
+}
+
+footer {
+  margin-top: 4rem;
+  color: var(--color-base-white);
+  background-color: var(--color-base-blue-400);
+
+}
+
+footer p {
+  text-align: center;
+  padding: 1.6rem;
+  font-weight: 600;
+}
