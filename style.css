@@ -26,6 +26,34 @@ body {
   color: var(--color-base-black-700);
 }
 
+#app {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "main main main"
+    "aside aside aside"
+    "footer footer footer"
+  ;
+
+  height: 100vh;
+}
+
+#app header {
+  grid-area: header;
+}
+
+#app main {
+  grid-area: main;
+}
+
+#app aside {
+  grid-area: aside;
+}
+
+#app footer {
+  grid-area: footer;
+}
+
 header nav {
   display: flex;
   align-items: center;
@@ -76,36 +104,45 @@ header form {
   width: 38rem;
 }
 
+.container h1 {
+  font-size: 2.4rem;
+}
+
 #banner-image {
   width: 100%;
-  margin-bottom: 3.2rem;
+}
+
+.title-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 3.2rem 0;
 }
 
 .buttons-wrapper {
-  padding: .8rem 0 3rem 0;
   display: flex;
   justify-content: flex-start;
   gap: 1rem;
+  margin-top: .8rem;
 }
 
-.gallery h1 {
-  padding: 3.2rem 0;
+aside {
+  margin: 3.2rem 0;
 }
 
-.grid-container {
-  display: flex;
-  flex-direction: column;
+aside .grid {
+  display: grid;
   gap: 3.2rem;
 }
 
-.grid-container .item {
+aside .item {
   display: flex;
   flex-direction: row;
   gap: 1.6rem;
   align-items: center;
 }
 
-.grid-container .item img {
+aside .item img {
   width: 15rem;
   height: 8rem;
   border-radius: .5rem;
@@ -113,20 +150,19 @@ header form {
   aspect-ratio: 16/4;
 }
 
-.grid-container .item h2 {
+aside .item h2 {
   font-size: 1.8rem;
   font-weight: 700;
   line-height: 160%;
 }
 
-.grid-container .item p {
+aside .item p {
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 160%;
 }
 
 footer {
-  margin-top: 4rem;
   color: var(--color-base-white);
   background-color: var(--color-base-blue-400);
 
@@ -136,4 +172,58 @@ footer p {
   text-align: center;
   padding: 1.6rem;
   font-weight: 600;
+}
+
+@media (min-width: 1120px) {
+  #app {
+    display: grid;
+    grid-template-areas:
+      "header header header"
+      "main main aside"
+      "footer footer footer"
+    ;
+
+    height: 100vh;
+  }
+
+  #app header {
+    grid-area: header;
+  }
+
+  #app header nav {
+    padding: 1.2rem 10rem;
+  }
+
+  #app main {
+    grid-area: main;
+    padding: 3.2rem 1.6rem 3.2rem 10rem;
+  }
+
+  #app main img {
+    border-radius: 15px;
+  }
+
+  .title-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .buttons-wrapper {
+    margin-top: 0;
+  }
+
+  #app main .container {
+    width: 100%;
+  }
+
+  #app aside {
+    grid-area: aside;
+    padding: 0 10rem 3.2rem 1.6rem;
+  }
+
+  #app footer {
+    grid-area: footer;
+  }
 }
